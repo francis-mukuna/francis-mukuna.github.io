@@ -22,10 +22,8 @@
     /* Launch screen */
     #start-screen {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: black;
       display: flex;
       align-items: center;
@@ -51,8 +49,7 @@
 
     video#bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       min-width: 100%;
       min-height: 100%;
       object-fit: cover;
@@ -172,14 +169,14 @@
     <button id="start-btn">Click Me to Open</button>
   </div>
 
-  <!-- Hidden Content -->
+  <!-- Main Content -->
   <div id="main-content" style="display: none;">
     <video id="bg-video" autoplay muted loop>
-      <source src="file:///C:/Users/user/OneDrive/Desktop/MYHTMLPROJECT/vida4.mp4" type="video/mp4" />
+      <source src="video/vida4.mp4" type="video/mp4" />
     </video>
 
     <audio id="bg-music" loop>
-      <source src="c:/Users/user/OneDrive/Desktop/Ne/Perfect Design.mp3" type="audio/mpeg" />
+      <source src="audio/perfect-design.mp3" type="audio/mpeg" />
     </audio>
 
     <div class="heart"></div>
@@ -190,13 +187,12 @@
     </div>
 
     <div class="slideshow-container">
-      <img class="slides" src="c:/Users/user/OneDrive/Desktop/Ne/pinang1.jpg" alt="First Image" />
-      <img class="slides" src="c:/Users/user/OneDrive/Desktop/Ne/pinang2.jpg" alt="Second Image" />
+      <img class="slides" src="images/pinang1.jpg" alt="First Image" />
+      <img class="slides" src="images/pinang2.jpg" alt="Second Image" />
     </div>
   </div>
 
   <script>
-    // Start Screen Transition
     document.getElementById("start-btn").addEventListener("click", function () {
       document.getElementById("start-screen").style.display = "none";
       document.getElementById("main-content").style.display = "block";
@@ -204,7 +200,6 @@
       if (music) music.play();
     });
 
-    // Slideshow
     let index = 0;
     const slides = document.getElementsByClassName("slides");
     function showSlides() {
