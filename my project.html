@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+     <style>
+        p1 {
+        background-color: lightblue;
+        border-color: blue;
+        color: black;
+        text-align: center;
+        margin-top: 5%;
+        font-size: 50px;
+        font-style: italic;
+        }
+        body {
+         background: linear-gradient(90deg, red,orange,yellow,green,blue,indigo,violet);
+        background-size: auto;
+        animation: rainbow 5s infinite;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+            video {
+            position: absolute;
+            top: 10%;
+            bottom: 10%;
+            min-width: 200%; 
+            height: 100;
+           
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        
+
+
+        </style>
+        
+    
+<title>nails</title>
+</head>
+<body> 
+        <video autoplay muted loop>
+                <source src="file:///c:\Users\user\OneDrive\Desktop\MYHTMLPROJECT\vida4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h1 style ="color:brown">welcome to my page my name is francis </h1>
+  
+<p1>i am a cosmetologist by deafult and i stlye people nails.
+         in this page you will get to see the types of nails that i do.
+         if you like any of my nails and would like me to work on yours please enter you details as asked.</p1>
+
+<h2>HTML Image</h2>
+
+        <a href='https://1drv.ms/v/c/8ac57249e6bf47d8/EXmLP8v_ZA9OlJCt5hN94ccBHigEOH5cPAzzFtYNFzelFQ?e=1HoAGP' tagrget="_blank" ><button>click to open</button> </a>
+        <img src="c:\Users\user\OneDrive\Desktop\MYHTMLPROJECT\img\img1.jpg" alt="francis" width="300" height="300">
+        <img src="c:\Users\user\OneDrive\Documentos\francis.jpg" alt="francis" width="300" height="300">
+  <a href="https://1drv.ms/i/c/8ac57249e6bf47d8/EVxLULYQ9AJCqDSdZkv3q0oBLzrohjlX8dN9CtlS8-gLsQ?e=Sxav7t" target="_blank"title="this is my image"><button>my image</button></a>
+<button onclick="window.location.href='file:///C:/Users/user/OneDrive/Documentos/francis.jpg'" target="_blank">My Photo</button>
+<button onclick="openSlideshow()"title="click here to open slide show">slideshow</button>
+
+    <script>
+        function openSlideshow() {
+            window.open("123.html", "_blank"); // Opens the slideshow in a new tab or window
+        }
+    </script>
+</body>
+</html>
