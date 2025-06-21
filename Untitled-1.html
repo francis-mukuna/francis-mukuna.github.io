@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francis's Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌤️ IoT Weather Dashboard</h1>
+      <button id="toggleTheme">Toggle Theme</button>
+    </header>
+
+    <section id="sensorData">
+      <h2>DHT Sensor</h2>
+      <p>Temperature: <span id="temperature">--</span>°C</p>
+      <p>Humidity: <span id="humidity">--</span>%</p>
+    </section>
+
+    <section id="githubActivity">
+      <h2>👨‍💻 GitHub Activity</h2>
+      <ul id="repoList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
