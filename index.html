@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gift</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       height: 100%;
       font-family: Arial, sans-serif;
@@ -19,7 +14,6 @@
       overflow: hidden;
     }
 
-    /* Launch screen */
     #start-screen {
       position: fixed;
       top: 0; left: 0;
@@ -43,15 +37,12 @@
       transition: transform 0.3s ease;
     }
 
-    #start-btn:hover {
-      transform: scale(1.1);
-    }
+    #start-btn:hover { transform: scale(1.1); }
 
     video#bg-video {
       position: fixed;
       top: 0; left: 0;
-      min-width: 100%;
-      min-height: 100%;
+      min-width: 100%; min-height: 100%;
       object-fit: cover;
       z-index: -1;
     }
@@ -68,7 +59,6 @@
     }
 
     .rainbow-box h1 {
-      margin: 0;
       font-size: 1.8em;
       background-color: rgba(0, 0, 0, 0.3);
       padding: 10px 20px;
@@ -115,8 +105,7 @@
       z-index: 5;
     }
 
-    .heart::before,
-    .heart::after {
+    .heart::before, .heart::after {
       content: "";
       position: absolute;
       width: 50px;
@@ -125,15 +114,8 @@
       border-radius: 50%;
     }
 
-    .heart::before {
-      top: -25px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: 25px;
-      top: 0;
-    }
+    .heart::before { top: -25px; left: 0; }
+    .heart::after { left: 25px; top: 0; }
 
     @keyframes pulse {
       0% { transform: scale(1) rotate(-45deg); }
@@ -164,19 +146,17 @@
 </head>
 <body>
 
-  <!-- Launch Screen -->
   <div id="start-screen">
     <button id="start-btn">Click Me to Open</button>
   </div>
 
-  <!-- Main Content -->
   <div id="main-content" style="display: none;">
     <video id="bg-video" autoplay muted loop>
-      <source src="video/vida4.mp4" type="video/mp4" />
+      <source src="vida4.mp4" type="video/mp4" />
     </video>
 
     <audio id="bg-music" loop>
-      <source src="audio/perfect-design.mp3" type="audio/mpeg" />
+      <source src="Perfect%20Design.mp3" type="audio/mpeg" />
     </audio>
 
     <div class="heart"></div>
@@ -187,8 +167,8 @@
     </div>
 
     <div class="slideshow-container">
-      <img class="slides" src="images/pinang1.jpg" alt="First Image" />
-      <img class="slides" src="images/pinang2.jpg" alt="Second Image" />
+      <img class="slides" src="pinang1.jpg" alt="First Image" />
+      <img class="slides" src="pinang2.jpg" alt="Second Image" />
     </div>
   </div>
 
