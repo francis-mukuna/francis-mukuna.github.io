@@ -3,28 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francis's Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Gift</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Launch screen */
+    #start-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    #start-btn {
+      padding: 20px 40px;
+      font-size: 1.5em;
+      background: linear-gradient(45deg, #ff004c, #ff9900);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 76, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    #start-btn:hover {
+      transform: scale(1.1);
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .rainbow-box {
+      display: inline-block;
+      margin-top: 60px;
+      padding: 20px 30px;
+      border-radius: 15px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 400%;
+      animation: rainbow 10s infinite;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .rainbow-box h1 {
+      margin: 0;
+      font-size: 1.8em;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 500px;
+      margin: 40px auto;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .active {
+      display: block;
+      animation: fade 2s;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .heart {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 45px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+      z-index: 5;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 45px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -25px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 25px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    .heart-container::before {
+      content: "💖 💕 💓 💗 💘 💝";
+      position: fixed;
+      width: 100%;
+      font-size: 2rem;
+      animation: floatHearts 15s linear infinite;
+      pointer-events: none;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    @keyframes floatHearts {
+      0% { top: 100%; opacity: 0; }
+      25% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { top: -20%; opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🌤️ IoT Weather Dashboard</h1>
-      <button id="toggleTheme">Toggle Theme</button>
-    </header>
 
-    <section id="sensorData">
-      <h2>DHT Sensor</h2>
-      <p>Temperature: <span id="temperature">--</span>°C</p>
-      <p>Humidity: <span id="humidity">--</span>%</p>
-    </section>
-
-    <section id="githubActivity">
-      <h2>👨‍💻 GitHub Activity</h2>
-      <ul id="repoList"></ul>
-    </section>
+  <!-- Launch Screen -->
+  <div id="start-screen">
+    <button id="start-btn">Click Me to Open</button>
   </div>
 
-  <script src="javas.js"></script>
+  <!-- Hidden Content -->
+  <div id="main-content" style="display: none;">
+    <video id="bg-video" autoplay muted loop>
+      <source src="file:///C:/Users/user/OneDrive/Desktop/MYHTMLPROJECT/vida4.mp4" type="video/mp4" />
+    </video>
+
+    <audio id="bg-music" loop>
+      <source src="c:/Users/user/OneDrive/Desktop/Ne/Perfect Design.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="heart"></div>
+    <div class="heart-container"></div>
+
+    <div class="rainbow-box">
+      <h1>To the Most Beautiful Girl I Know with the Brightest Smile</h1>
+    </div>
+
+    <div class="slideshow-container">
+      <img class="slides" src="c:/Users/user/OneDrive/Desktop/Ne/pinang1.jpg" alt="First Image" />
+      <img class="slides" src="c:/Users/user/OneDrive/Desktop/Ne/pinang2.jpg" alt="Second Image" />
+    </div>
+  </div>
+
+  <script>
+    // Start Screen Transition
+    document.getElementById("start-btn").addEventListener("click", function () {
+      document.getElementById("start-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      const music = document.getElementById("bg-music");
+      if (music) music.play();
+    });
+
+    // Slideshow
+    let index = 0;
+    const slides = document.getElementsByClassName("slides");
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      index++;
+      if (index > slides.length) { index = 1; }
+      slides[index - 1].classList.add("active");
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+  </script>
+
 </body>
 </html>
